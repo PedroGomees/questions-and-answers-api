@@ -1,0 +1,2 @@
+# questions-and-answers-api
+ Plataform Questions and Answers API é a API de uma plataforma de perguntas e respostas desenvolvida para permitir que usuários publiquem perguntas, respondam dúvidas e interajam em uma comunidade de aprendizado. O projeto conta com um sistema de autenticação seguro, suporte a JWT, criptografia de senhas, validação por e-mail e funcionalidades como agendamento, fórum, desafios semanais e chats.

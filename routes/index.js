@@ -1,8 +1,14 @@
 import express from 'express'
 import perguntarRouter from './perguntar.js'
 const router = express.Router()
-
-
+import db from '../database/db.js'
+//Database
+db
+    .authenticate().then(()=>{
+        console.log("Conexão feita com sucesso")
+    }).catch((Error) =>{
+        console.log(Error)
+    })
 
 //Rota pagina inicial
 

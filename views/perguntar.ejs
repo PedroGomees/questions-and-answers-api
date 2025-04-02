@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Perguntar</title>
-</head>
+<%- include ('partials/head.ejs') %>
+<%- include ('partials/header.ejs') %>
 <body>
-    <header>
-        <div class="logo">Q&A</div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Perguntas</a></li>
-                <li><a href="#">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
+   
     <div class="container">
         <h2>Faça uma Pergunta</h2>
-        <form id="questionForm">
-            <label for="title">Título da Pergunta:</label>
-            <input type="text" id="title" required>
+        <form id="questionForm" method="POST" action="/perguntar/salvar">     
+                  <label for="title">Título da Pergunta:</label>
+            <input type="text" id="title" required name="titulo">
             
             <label for="description">Descrição:</label>
-            <textarea id="description" rows="4" required></textarea>
+            <textarea id="description" rows="4" required name="desc">
+
+            </textarea>
             
             <button type="submit">Realizar Pergunta</button>
         </form>

@@ -2,6 +2,7 @@ import express from 'express'
 import perguntarRouter from './perguntar.js'
 const router = express.Router()
 import db from '../database/db.js'
+import homeRouter from './home.js'
 //Database
 db
     .authenticate().then(()=>{
@@ -11,12 +12,10 @@ db
     })
 
 //Rota pagina inicial
+router.use('/',homeRouter)
 
-router.get('/',(req,res)=>{
-    res.render("index")
-})
 
 
 //Rota de pergunta
-router.use("/perguntar",perguntarRouter)
+router.use("/pergunta",perguntarRouter)
 export default router;

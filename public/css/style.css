@@ -11,7 +11,7 @@ header {
     
     justify-content: space-between;
     align-items: center;
-    background: #007BFF;
+    background: #000000;
     height: 100px;
     margin-bottom: 80px;
     color: white;
@@ -46,6 +46,7 @@ nav ul li a:hover {
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 200px;
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -71,7 +72,7 @@ input, textarea {
 button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background: #1f1f1f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -88,3 +89,29 @@ button:hover {
     border-radius: 5px;
     margin-top: 10px;
 }
+
+    .card {
+        background-color: #1c1c1c;
+        color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .card h5 {
+        margin: 0 0 10px;
+    }
+
+    .card a {
+        color: #fff;
+        background-color: #444;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .card a:hover {
+        background-color: #666;
+    }
+

@@ -4,6 +4,7 @@ import path from 'path'
 import bodyParser from 'body-parser';
 import router from "./routes/index.js"
 import Pergunta from './database/Pergunta.js'
+import Resposta from "./database/resposta.js"
 //Usar EJS como view engine
 app.set('view engine', 'ejs'); 
 app.set('views', path.join(process.cwd(), 'views'));

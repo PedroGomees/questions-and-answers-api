@@ -6,11 +6,31 @@
         <h1 class="mb-4 text-center"><%= pergunta.titulo %></h1>
             <div class="card mb-3 shadow-sm">
                 <div class="card-body">
-                  
                     <p class="card-text"><%= pergunta.descricao %></p>
-                    <a href="/pergunta/<%= pergunta.id %>" class="btn btn-dark">Responder</a>
+                    <hr>
+                    <form method="POST" action="/pergunta/respostas/save">
+                     
+                        <label>Resposta:</label>
+                        <textarea placeholder="Digite sua resposta" name="corpo"></textarea><br>
+                        <input type="hidden" name="pergunta" value="<%= pergunta.id%>">
+                   
+                    <button type="submit" class="btn btn-dark">Responder</button>
+                </form>
+                  
                 </div>
             </div>
-    
+           
+    </div>
+    <div class="container mt-4 marginBot">
+        <h1 class="mb-4 text-center">Respostas Recentes</h1>
+        <% respostas.forEach(respostas =>{%>
+            
+        <%= respostas.corpo %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <%})%>
+        
     </div>
 </body>

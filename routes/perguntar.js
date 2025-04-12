@@ -1,6 +1,7 @@
 import express from "express"
 const router = express.Router()
 import Pergunta from "../database/Pergunta.js"
+import Resposta from "../database/resposta.js"
 
 router.get('/',(req,res)=>{
   
@@ -24,18 +25,37 @@ router.post("/salvar",(req,res)=>{
     })
 })
 
-router.get("/:id",(req,res)=>{
+router.get("/respostas/:id",(req,res)=>{
     const id = req.params.id;
     Pergunta.findOne({
         where:{id: id}
     }).then(pergunta =>{
         if(pergunta != undefined){
-            res.render("perguntas",{
-                pergunta: pergunta
+            Resposta.findAll({
+                where:{perguntaId: pergunta.id}
+            }).then(respostas=>{
+                res.render("perguntas",{
+                    pergunta: pergunta,
+                    respostas: respostas
+            })
+           
             });
         }else{
             res.redirect("/")
         }
     })
+})
+
+router.post("/respostas/save",(req,res)=>{
+    var corpo = req.body.corpo;
+    var perguntaId = req.body.pergunta;
+
+    Resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(()=>{
+        res.redirect("/pergunta/respostas/"+perguntaId);
+    })
+
 })
 export default router;
